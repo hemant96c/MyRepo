@@ -10,16 +10,19 @@ pipeline{
         stage("TF Validate"){
             steps{
                 echo "Validating Terraform Code"
+                bat 'terraform validate'
             }
         }
         stage("TF Plan"){
             steps{
                 echo "Executing Terraform Plan"
+                bat 'terraform plan'
             }
         }
         stage("TF Apply"){
             steps{
                 echo "Executing Terraform Apply"
+                bat 'terraform apply
             }
         }
         stage("Invoke Lambda"){
