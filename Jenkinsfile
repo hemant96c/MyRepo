@@ -4,7 +4,7 @@ pipeline{
         stage("TF Init"){
             steps{
                 echo "Executing Terraform Init"
-                bat 'terraform init'
+                bat 'C:\Program Files\Terraform\terraform.exe init'
             }
         }
         stage("TF Validate"){
