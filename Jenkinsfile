@@ -22,7 +22,7 @@ pipeline{
         stage("TF Apply"){
             steps{
                 echo "Executing Terraform Apply"
-                bat 'terraform apply
+                bat 'terraform apply'
             }
         }
         stage("Invoke Lambda"){
