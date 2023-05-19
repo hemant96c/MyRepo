@@ -39,5 +39,12 @@ pipeline{
                 bat 'type out.json'
             }
         }
+        
+        stage("TF Destroy"){
+            steps{
+                echo "Executing Terraform Destroy"
+                bat 'terraform destroy -auto-approve'
+            }
+        }
     }
 }
