@@ -36,7 +36,7 @@ pipeline{
             steps{
                 echo "Invoking your AWS Lambda"
                 bat 'aws lambda invoke --function-name lambda --region ap-south-1 out.txt'
-                bat 'cat out.txt'
+                bat 'type out.txt'
             }
         }
     }
