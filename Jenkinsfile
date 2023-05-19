@@ -22,12 +22,14 @@ pipeline{
         stage("TF Apply"){
             steps{
                 echo "Executing Terraform Apply"
-                bat 'terraform apply'
+                bat 'terraform apply -auto-approve'
             }
         }
         stage("Invoke Lambda"){
             steps{
                 echo "Invoking your AWS Lambda"
+                bat 'aws lambda invoke --function-name lambda out.txt'
+                bat 'cat out.txt'
             }
         }
     }
